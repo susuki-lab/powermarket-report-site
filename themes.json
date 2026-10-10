@@ -1,0 +1,10 @@
+[
+  {
+    "slug": "jepx-spot",
+    "title": "JEPXスポット市場",
+    "description": "JEPX一日前市場（スポット）の価格・約定量の週次／日次分析。気温・発電設備停止の要因も反映。",
+    "weekly_count": 28,
+    "daily_count": 194,
+    "latest": "落ち着いた値動き"
+  }
+]
