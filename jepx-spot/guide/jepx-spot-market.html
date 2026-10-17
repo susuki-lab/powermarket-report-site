@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JEPXスポット市場とは｜一日前市場の仕組みと価格の決まり方｜電力市場インサイト</title>
+<meta name="description" content="JEPXスポット市場（一日前市場）とは何かを基礎から解説。入札の締切、ブラインド・シングルプライスオークション、約定価格の決まり方、30分コマ単位の取引など、電力卸取引の基本をわかりやすく整理します。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://powermarketinsight.net/jepx-spot/guide/jepx-spot-market.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="電力市場インサイト">
+<meta property="og:title" content="JEPXスポット市場とは｜一日前市場の仕組みと価格の決まり方｜電力市場インサイト">
+<meta property="og:description" content="JEPXスポット市場（一日前市場）とは何かを基礎から解説。入札の締切、ブラインド・シングルプライスオークション、約定価格の決まり方、30分コマ単位の取引など、電力卸取引の基本をわかりやすく整理します。">
+<meta property="og:url" content="https://powermarketinsight.net/jepx-spot/guide/jepx-spot-market.html">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "JEPXスポット市場とは｜一日前市場の仕組みと価格の決まり方",
+      "description": "JEPXスポット市場（一日前市場）とは何かを基礎から解説。入札の締切、ブラインド・シングルプライスオークション、約定価格の決まり方、30分コマ単位の取引など、電力卸取引の基本をわかりやすく整理します。",
+      "url": "https://powermarketinsight.net/jepx-spot/guide/jepx-spot-market.html",
+      "inLanguage": "ja",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://powermarketinsight.net/jepx-spot/guide/jepx-spot-market.html"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "電力市場インサイト"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "電力市場インサイト",
+        "url": "https://powermarketinsight.net/"
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "JEPXスポット市場",
+        "description": "JEPXスポット市場（一日前市場）とは何かを基礎から解説。入札の締切、ブラインド・シングルプライスオークション、約定価格の決まり方、30分コマ単位の取引など、電力卸取引の基本をわかりやすく整理します。",
+        "inDefinedTermSet": "https://powermarketinsight.net/jepx-spot/guide/index.html"
+      },
+      "dateModified": "2026-10-10",
+      "datePublished": "2026-10-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "スポット市場と時間前市場の違いは？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "スポット市場は受渡前日に翌日分を取引する一日前市場です。時間前市場は受渡当日に、スポットで調整しきれなかった需給のズレを売買する市場で、受渡の直前まで取引できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "スポット価格は誰が決めているの？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "特定の誰かが決めるのではなく、市場参加者の売り・買い入札を突き合わせて、需要と供給が一致する点で自動的に1つの価格が決まります。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--brand:#0B4F8A;--brand-2:#1E88E5;--accent:#E8622C;--up:#C62828;--down:#1565C0;--ink:#1A2733;--ink-soft:#5B6B78;--line:#E3E9EF;--bg:#F4F7FA;--card:#FFFFFF;--shadow:0 1px 3px rgba(16,42,67,.08),0 4px 16px rgba(16,42,67,.06);}
+  *{box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic","Meiryo",sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.8;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:860px;margin:0 auto;padding:32px 24px 64px;}
+  .article-head{background:linear-gradient(120deg,var(--brand) 0%,var(--brand-2) 100%);color:#fff;border-radius:16px;padding:30px 32px;box-shadow:var(--shadow);}
+  .article-head .eyebrow{font-size:12px;letter-spacing:.14em;opacity:.9;font-weight:500;}
+  .article-head .eyebrow a{color:#fff;text-decoration:none;opacity:.9;}
+  .article-head .eyebrow a:hover{opacity:1;text-decoration:underline;}
+  .article-head h1{font-size:26px;font-weight:700;margin:12px 0 6px;letter-spacing:.01em;line-height:1.4;}
+  .article-head .updated{font-size:12px;opacity:.85;}
+  .lead{font-size:15.5px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:18px 22px;margin:24px 0 8px;box-shadow:var(--shadow);}
+  section{margin-top:30px;}
+  h2{font-size:19px;font-weight:700;color:var(--brand);margin:0 0 12px;padding-left:12px;border-left:4px solid var(--accent);}
+  section p{font-size:14.5px;margin:10px 0;}
+  ul.points{margin:12px 0;padding:0;list-style:none;}
+  ul.points li{position:relative;padding:8px 14px 8px 34px;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin:8px 0;box-shadow:var(--shadow);}
+  ul.points li::before{content:"";position:absolute;left:14px;top:16px;width:8px;height:8px;border-radius:2px;background:var(--brand-2);}
+  .faq{margin-top:14px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 18px;margin:10px 0;box-shadow:var(--shadow);}
+  .faq summary{font-size:14.5px;font-weight:700;color:var(--ink);cursor:pointer;padding:12px 0;list-style:none;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::before{content:"Q ";color:var(--accent);font-weight:700;}
+  .faq details[open] summary{border-bottom:1px dashed var(--line);}
+  .faq .answer{font-size:14px;color:var(--ink-soft);padding:12px 0;}
+  .faq .answer::before{content:"A ";color:var(--brand-2);font-weight:700;}
+  .related{margin-top:34px;}
+  .related h2{margin-bottom:14px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  a.related-card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);transition:transform .12s,box-shadow .12s;}
+  a.related-card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(16,42,67,.14);border-color:#C9D8E8;}
+  a.related-card .r-label{font-size:11px;color:var(--ink-soft);}
+  a.related-card .r-title{font-size:15px;font-weight:700;color:var(--brand);margin-top:4px;}
+  .prevnext{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:30px 0 0;font-size:13px;}
+  .prevnext a{text-decoration:none;color:var(--brand);font-weight:700;}
+  .prevnext span.disabled{color:#B5C0CB;font-weight:700;}
+  .backlinks{margin-top:26px;font-size:13px;}
+  .backlinks a{color:var(--brand-2);text-decoration:none;font-weight:700;}
+  .backlinks a:hover{text-decoration:underline;}
+  .foot{margin-top:40px;font-size:11.5px;color:var(--ink-soft);text-align:center;}
+  @media(max-width:720px){.related-list{grid-template-columns:1fr;}.article-head h1{font-size:21px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="article-head">
+    <div class="eyebrow"><a href="index.html">← 用語解説ガイド一覧へ</a></div>
+    <div class="eyebrow" style="margin-top:4px;">JEPX SPOT MARKET GUIDE</div>
+    <h1>JEPXスポット市場とは｜一日前市場の仕組みと価格の決まり方</h1>
+    <div class="updated">最終更新: 2026-10-10</div>
+  </header>
+
+  <p class="lead">JEPXスポット市場は、電気を受け渡す前日に翌日分の電力を売買する「一日前市場」です。日本の電力取引の中心的な市場で、ここで決まる価格は新電力の調達コストや電気料金の目安として広く参照されています。</p>
+
+  
+  <section>
+    <h2>スポット市場（一日前市場）の位置づけ</h2>
+    <p>JEPX（一般社団法人 日本卸電力取引所）が運営する卸電力取引の市場には、スポット市場（一日前市場）、時間前市場（当日市場）、先渡市場などがあります。このうちスポット市場は取引量が最も大きく、電力価格の指標として最も注目される市場です。</p><p>「スポット」といっても即時取引ではなく、電気を受け渡す前日に翌日分を売買する点が特徴です。翌日の24時間を30分ごとに区切った48コマそれぞれについて、売り・買いの入札を集めて価格と量を決めます。</p>
+    
+  </section>
+  
+  <section>
+    <h2>30分コマ単位の取引</h2>
+    <p>スポット市場では1日を30分刻みの48コマに分け、コマごとに独立して価格が決まります。そのため同じ日でも、需要が集中する夕方のコマと、太陽光発電が豊富な昼間のコマでは価格が大きく異なります。</p>
+    
+    <ul class="points">
+      <li>コマ1 = 0:00〜0:30、コマ2 = 0:30〜1:00 … コマ48 = 23:30〜24:00</li><li>各コマで売り入札・買い入札を突き合わせて約定価格を決定</li><li>昼間（太陽光が多い時間帯）は価格が下がり、夕方の点灯帯は上がりやすい</li>
+    </ul>
+    
+  </section>
+  
+  <section>
+    <h2>価格の決まり方：ブラインド・シングルプライスオークション</h2>
+    <p>スポット市場の価格は「ブラインド・シングルプライスオークション」で決まります。入札は締切まで互いの内容が見えない（ブラインド）方式で、締切後に売り入札を安い順、買い入札を高い順に並べ、需要と供給が一致する点で価格が1つに決まります（シングルプライス）。</p><p>この交点で決まる価格が、そのコマの約定価格です。約定した参加者は、自分の入札価格にかかわらず、全員この統一価格で取引します。</p>
+    
+  </section>
+  
+  <section>
+    <h2>入札の締切スケジュール</h2>
+    <p>翌日受渡分の入札は前日の午前10時に締め切られ、同日のうちに約定結果（価格・量）が公表されます。本サイトの日次レポートは、この確定した翌日分のデータをもとに自動生成しています。</p>
+    
+  </section>
+  
+
+  
+  <section class="faq">
+    <h2>よくある質問</h2>
+    
+    <details>
+      <summary>スポット市場と時間前市場の違いは？</summary>
+      <div class="answer">スポット市場は受渡前日に翌日分を取引する一日前市場です。時間前市場は受渡当日に、スポットで調整しきれなかった需給のズレを売買する市場で、受渡の直前まで取引できます。</div>
+    </details>
+    
+    <details>
+      <summary>スポット価格は誰が決めているの？</summary>
+      <div class="answer">特定の誰かが決めるのではなく、市場参加者の売り・買い入札を突き合わせて、需要と供給が一致する点で自動的に1つの価格が決まります。</div>
+    </details>
+    
+  </section>
+  
+
+  
+  <section class="related">
+    <h2>関連する用語解説</h2>
+    <div class="related-list">
+      
+      <a class="related-card" href="system-price.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">システムプライスとは</div>
+      </a>
+      
+      <a class="related-card" href="area-price.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">エリアプライスとは</div>
+      </a>
+      
+      <a class="related-card" href="how-to-read.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">スポット価格レポートの読み方</div>
+      </a>
+      
+    </div>
+  </section>
+  
+
+  <nav class="prevnext">
+    <span class="disabled">← 前の記事なし</span>
+    <a href="system-price.html">システムプライスとは →</a>
+  </nav>
+
+  <div class="backlinks">
+    <a href="index.html">用語解説ガイド一覧</a>　|　<a href="../index.html">JEPXスポット市場トップ</a>
+  </div>
+
+  <div class="foot">Generated by jepx_weekly v0.1.0　|　データ出典: JEPX、気象庁、HJKS</div>
+</div>
+</body>
+</html>

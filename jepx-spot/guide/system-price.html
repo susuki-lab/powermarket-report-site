@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>システムプライスとは｜連系線制約がない場合の全国統一価格｜電力市場インサイト</title>
+<meta name="description" content="システムプライス（システムプライス、全国統一価格）とは何かを解説。エリア間の連系線制約を考慮しない前提で決まる全国一本の価格で、エリアプライスとの違いや、価格指標として使われる理由を整理します。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://powermarketinsight.net/jepx-spot/guide/system-price.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="電力市場インサイト">
+<meta property="og:title" content="システムプライスとは｜連系線制約がない場合の全国統一価格｜電力市場インサイト">
+<meta property="og:description" content="システムプライス（システムプライス、全国統一価格）とは何かを解説。エリア間の連系線制約を考慮しない前提で決まる全国一本の価格で、エリアプライスとの違いや、価格指標として使われる理由を整理します。">
+<meta property="og:url" content="https://powermarketinsight.net/jepx-spot/guide/system-price.html">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "システムプライスとは｜連系線制約がない場合の全国統一価格",
+      "description": "システムプライス（システムプライス、全国統一価格）とは何かを解説。エリア間の連系線制約を考慮しない前提で決まる全国一本の価格で、エリアプライスとの違いや、価格指標として使われる理由を整理します。",
+      "url": "https://powermarketinsight.net/jepx-spot/guide/system-price.html",
+      "inLanguage": "ja",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://powermarketinsight.net/jepx-spot/guide/system-price.html"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "電力市場インサイト"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "電力市場インサイト",
+        "url": "https://powermarketinsight.net/"
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "システムプライス",
+        "description": "システムプライス（システムプライス、全国統一価格）とは何かを解説。エリア間の連系線制約を考慮しない前提で決まる全国一本の価格で、エリアプライスとの違いや、価格指標として使われる理由を整理します。",
+        "inDefinedTermSet": "https://powermarketinsight.net/jepx-spot/guide/index.html"
+      },
+      "dateModified": "2026-10-10",
+      "datePublished": "2026-10-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "システムプライスとエリアプライスはどちらを見ればいい？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "全国全体の相場観や推移を見たいときはシステムプライス、自社の需要地での実際の調達価格を見たいときはそのエリアのエリアプライスを参照します。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--brand:#0B4F8A;--brand-2:#1E88E5;--accent:#E8622C;--up:#C62828;--down:#1565C0;--ink:#1A2733;--ink-soft:#5B6B78;--line:#E3E9EF;--bg:#F4F7FA;--card:#FFFFFF;--shadow:0 1px 3px rgba(16,42,67,.08),0 4px 16px rgba(16,42,67,.06);}
+  *{box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic","Meiryo",sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.8;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:860px;margin:0 auto;padding:32px 24px 64px;}
+  .article-head{background:linear-gradient(120deg,var(--brand) 0%,var(--brand-2) 100%);color:#fff;border-radius:16px;padding:30px 32px;box-shadow:var(--shadow);}
+  .article-head .eyebrow{font-size:12px;letter-spacing:.14em;opacity:.9;font-weight:500;}
+  .article-head .eyebrow a{color:#fff;text-decoration:none;opacity:.9;}
+  .article-head .eyebrow a:hover{opacity:1;text-decoration:underline;}
+  .article-head h1{font-size:26px;font-weight:700;margin:12px 0 6px;letter-spacing:.01em;line-height:1.4;}
+  .article-head .updated{font-size:12px;opacity:.85;}
+  .lead{font-size:15.5px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:18px 22px;margin:24px 0 8px;box-shadow:var(--shadow);}
+  section{margin-top:30px;}
+  h2{font-size:19px;font-weight:700;color:var(--brand);margin:0 0 12px;padding-left:12px;border-left:4px solid var(--accent);}
+  section p{font-size:14.5px;margin:10px 0;}
+  ul.points{margin:12px 0;padding:0;list-style:none;}
+  ul.points li{position:relative;padding:8px 14px 8px 34px;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin:8px 0;box-shadow:var(--shadow);}
+  ul.points li::before{content:"";position:absolute;left:14px;top:16px;width:8px;height:8px;border-radius:2px;background:var(--brand-2);}
+  .faq{margin-top:14px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 18px;margin:10px 0;box-shadow:var(--shadow);}
+  .faq summary{font-size:14.5px;font-weight:700;color:var(--ink);cursor:pointer;padding:12px 0;list-style:none;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::before{content:"Q ";color:var(--accent);font-weight:700;}
+  .faq details[open] summary{border-bottom:1px dashed var(--line);}
+  .faq .answer{font-size:14px;color:var(--ink-soft);padding:12px 0;}
+  .faq .answer::before{content:"A ";color:var(--brand-2);font-weight:700;}
+  .related{margin-top:34px;}
+  .related h2{margin-bottom:14px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  a.related-card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);transition:transform .12s,box-shadow .12s;}
+  a.related-card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(16,42,67,.14);border-color:#C9D8E8;}
+  a.related-card .r-label{font-size:11px;color:var(--ink-soft);}
+  a.related-card .r-title{font-size:15px;font-weight:700;color:var(--brand);margin-top:4px;}
+  .prevnext{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:30px 0 0;font-size:13px;}
+  .prevnext a{text-decoration:none;color:var(--brand);font-weight:700;}
+  .prevnext span.disabled{color:#B5C0CB;font-weight:700;}
+  .backlinks{margin-top:26px;font-size:13px;}
+  .backlinks a{color:var(--brand-2);text-decoration:none;font-weight:700;}
+  .backlinks a:hover{text-decoration:underline;}
+  .foot{margin-top:40px;font-size:11.5px;color:var(--ink-soft);text-align:center;}
+  @media(max-width:720px){.related-list{grid-template-columns:1fr;}.article-head h1{font-size:21px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="article-head">
+    <div class="eyebrow"><a href="index.html">← 用語解説ガイド一覧へ</a></div>
+    <div class="eyebrow" style="margin-top:4px;">JEPX SPOT MARKET GUIDE</div>
+    <h1>システムプライスとは｜連系線制約がない場合の全国統一価格</h1>
+    <div class="updated">最終更新: 2026-10-10</div>
+  </header>
+
+  <p class="lead">システムプライスは、エリア間を結ぶ送電線（連系線）の制約がまったくないと仮定して計算される全国統一の価格です。日本全体を1つの市場とみなしたときの基準価格で、市場全体の需給バランスを示す指標として使われます。</p>
+
+  
+  <section>
+    <h2>システムプライスの考え方</h2>
+    <p>スポット市場では、まず全国の売り入札・買い入札をすべて1つにまとめ、連系線の送電容量による制約を考えない前提で約定価格を求めます。これがシステムプライスです。</p><p>連系線に制約がなければ、電気は全国どこへでも自由に流れるため、価格は全国で1つになります。システムプライスは、この「理想的に電気が流通した場合の全国価格」を表します。</p>
+    
+  </section>
+  
+  <section>
+    <h2>エリアプライスとの関係</h2>
+    <p>実際には連系線の容量に限りがあるため、安い電気を需要地まで送りきれないことがあります。この制約を加味してエリアごとに計算し直した価格がエリアプライスです。</p><p>連系線に余裕があるコマでは、システムプライスと各エリアのエリアプライスは一致します。逆に連系線が混雑するコマでは、エリアごとに価格が分かれ、システムプライスから乖離します。</p>
+    
+    <ul class="points">
+      <li>連系線に余裕あり → システムプライス = 各エリアプライス（全国同一）</li><li>連系線が混雑 → エリアごとに価格が分かれ、システムプライスと差が生じる</li>
+    </ul>
+    
+  </section>
+  
+  <section>
+    <h2>指標として使われる理由</h2>
+    <p>システムプライスは特定エリアの事情に左右されない全国一本の価格のため、電力市場全体の水準や、前日比・前週比などの推移を見るうえで扱いやすい指標です。本サイトの週次・日次レポートでも、全国の価格動向はシステムプライスを基準に解説しています。</p>
+    
+  </section>
+  
+
+  
+  <section class="faq">
+    <h2>よくある質問</h2>
+    
+    <details>
+      <summary>システムプライスとエリアプライスはどちらを見ればいい？</summary>
+      <div class="answer">全国全体の相場観や推移を見たいときはシステムプライス、自社の需要地での実際の調達価格を見たいときはそのエリアのエリアプライスを参照します。</div>
+    </details>
+    
+  </section>
+  
+
+  
+  <section class="related">
+    <h2>関連する用語解説</h2>
+    <div class="related-list">
+      
+      <a class="related-card" href="area-price.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">エリアプライスとは</div>
+      </a>
+      
+      <a class="related-card" href="jepx-spot-market.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">JEPXスポット市場とは</div>
+      </a>
+      
+      <a class="related-card" href="how-to-read.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">スポット価格レポートの読み方</div>
+      </a>
+      
+    </div>
+  </section>
+  
+
+  <nav class="prevnext">
+    <a href="jepx-spot-market.html">← JEPXスポット市場とは</a>
+    <a href="area-price.html">エリアプライスとは →</a>
+  </nav>
+
+  <div class="backlinks">
+    <a href="index.html">用語解説ガイド一覧</a>　|　<a href="../index.html">JEPXスポット市場トップ</a>
+  </div>
+
+  <div class="foot">Generated by jepx_weekly v0.1.0　|　データ出典: JEPX、気象庁、HJKS</div>
+</div>
+</body>
+</html>
