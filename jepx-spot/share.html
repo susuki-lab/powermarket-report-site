@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xシェア（運用者用）｜電力市場インサイト</title>
+<!-- 運用者専用ページ。検索エンジンにはインデックスさせない。 -->
+<meta name="robots" content="noindex,nofollow">
+<link rel="canonical" href="https://powermarketinsight.net/jepx-spot/share.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--brand:#0B4F8A;--brand-2:#1E88E5;--accent:#E8622C;--ink:#1A2733;--ink-soft:#5B6B78;--line:#E3E9EF;--bg:#F4F7FA;--card:#FFFFFF;--shadow:0 1px 3px rgba(16,42,67,.08),0 4px 16px rgba(16,42,67,.06);}
+  *{box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic","Meiryo",sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.7;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px;margin:0 auto;padding:36px 24px 64px;}
+  .hero{background:linear-gradient(120deg,var(--brand) 0%,var(--brand-2) 100%);color:#fff;border-radius:16px;padding:28px 32px;box-shadow:var(--shadow);}
+  .hero .eyebrow{font-size:12px;letter-spacing:.16em;opacity:.9;font-weight:500;}
+  .hero .eyebrow a{color:#fff;text-decoration:none;opacity:.9;}
+  .hero h1{font-size:24px;font-weight:700;margin:10px 0 6px;}
+  .hero p{font-size:13px;opacity:.92;margin:0;}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow);margin-top:20px;}
+  .card .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;color:#fff;background:var(--brand-2);border-radius:999px;padding:4px 12px;}
+  .card.weekly .tag{background:var(--brand);}
+  .card .label{font-size:13px;color:var(--ink-soft);margin:10px 0 6px;}
+  .preview{white-space:pre-wrap;font-size:13.5px;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:8px 0 14px;font-family:"Noto Sans JP",monospace;}
+  .actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center;}
+  .btn-x{display:inline-flex;align-items:center;gap:7px;background:#0F1419;color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:10px 20px;border-radius:999px;transition:transform .12s,box-shadow .12s;}
+  .btn-x:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.26);}
+  .btn-x .x-logo{font-size:17px;line-height:1;}
+  .btn-copy{appearance:none;cursor:pointer;background:#fff;color:var(--brand);border:1px solid var(--line);font-family:inherit;font-weight:700;font-size:13px;padding:9px 16px;border-radius:999px;transition:all .12s;}
+  .btn-copy:hover{border-color:#C9D8E8;box-shadow:var(--shadow);}
+  .btn-copy.copied{background:var(--brand);color:#fff;border-color:var(--brand);}
+  .report-link{font-size:12.5px;color:var(--brand-2);text-decoration:none;}
+  .report-link:hover{text-decoration:underline;}
+  .empty{color:var(--ink-soft);padding:30px;text-align:center;}
+  .note{margin-top:22px;font-size:12px;color:var(--ink-soft);line-height:1.8;}
+  .foot{margin-top:36px;font-size:11.5px;color:var(--ink-soft);text-align:center;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow"><a href="index.html">← テーマトップへ</a></div>
+    <div class="eyebrow" style="margin-top:4px;">INTERNAL · SHARE</div>
+    <h1>Xシェア（運用者用）</h1>
+    <p>最新レポートの投稿文とワンクリック投稿ボタンです。ボタンを押すとXの投稿画面が開くので、内容を確認して投稿してください（API課金なし）。</p>
+  </header>
+
+  
+  
+  <section class="card daily">
+    <span class="tag">DAILY</span>
+    <div class="label">日次レポート（2026-11-01）の投稿文</div>
+    <div class="preview" id="preview-1">【JEPXスポット 日次】2026-11-01
+24時間平均 17.20 円/kWh（前日比 -6.4%）
+最高 28.76 ／ 最安 0.01 円/kWh
+▼レポート
+https://powermarketinsight.net/jepx-spot/daily/2026/2026-11-01.html
+#JEPX #電力市場 #スポット価格</div>
+    <div class="actions">
+      <a class="btn-x" href="https://twitter.com/intent/tweet?text=%E3%80%90JEPX%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88+%E6%97%A5%E6%AC%A1%E3%80%912026-11-01%0A24%E6%99%82%E9%96%93%E5%B9%B3%E5%9D%87+17.20+%E5%86%86%2FkWh%EF%BC%88%E5%89%8D%E6%97%A5%E6%AF%94+-6.4%25%EF%BC%89%0A%E6%9C%80%E9%AB%98+28.76+%EF%BC%8F+%E6%9C%80%E5%AE%89+0.01+%E5%86%86%2FkWh%0A%23JEPX+%23%E9%9B%BB%E5%8A%9B%E5%B8%82%E5%A0%B4+%23%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%E4%BE%A1%E6%A0%BC&amp;url=https%3A%2F%2Fpowermarketinsight.net%2Fjepx-spot%2Fdaily%2F2026%2F2026-11-01.html" target="_blank" rel="noopener">
+        <span class="x-logo" aria-hidden="true">𝕏</span>この内容で投稿
+      </a>
+      <button class="btn-copy" data-target="preview-1">本文をコピー</button>
+      <a class="report-link" href="https://powermarketinsight.net/jepx-spot/daily/2026/2026-11-01.html" target="_blank" rel="noopener">レポートを開く →</a>
+    </div>
+  </section>
+  
+  <section class="card weekly">
+    <span class="tag">WEEKLY</span>
+    <div class="label">週次レポート（2026-10-25 〜 2026-10-31）の投稿文</div>
+    <div class="preview" id="preview-2">【JEPXスポット 週次】2026-10-25〜2026-10-31
+四国で極端な安値に
+週平均 26.79 円/kWh（前週比 +1.8%）
+約定総量 6,936 GWh
+▼レポート
+https://powermarketinsight.net/jepx-spot/weekly/2026/2026-10-25_2026-10-31.html
+#JEPX #電力市場 #スポット価格</div>
+    <div class="actions">
+      <a class="btn-x" href="https://twitter.com/intent/tweet?text=%E3%80%90JEPX%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88+%E9%80%B1%E6%AC%A1%E3%80%912026-10-25%E3%80%9C2026-10-31%0A%E5%9B%9B%E5%9B%BD%E3%81%A7%E6%A5%B5%E7%AB%AF%E3%81%AA%E5%AE%89%E5%80%A4%E3%81%AB%0A%E9%80%B1%E5%B9%B3%E5%9D%87+26.79+%E5%86%86%2FkWh%EF%BC%88%E5%89%8D%E9%80%B1%E6%AF%94+%2B1.8%25%EF%BC%89%0A%E7%B4%84%E5%AE%9A%E7%B7%8F%E9%87%8F+6%2C936+GWh%0A%23JEPX+%23%E9%9B%BB%E5%8A%9B%E5%B8%82%E5%A0%B4+%23%E3%82%B9%E3%83%9D%E3%83%83%E3%83%88%E4%BE%A1%E6%A0%BC&amp;url=https%3A%2F%2Fpowermarketinsight.net%2Fjepx-spot%2Fweekly%2F2026%2F2026-10-25_2026-10-31.html" target="_blank" rel="noopener">
+        <span class="x-logo" aria-hidden="true">𝕏</span>この内容で投稿
+      </a>
+      <button class="btn-copy" data-target="preview-2">本文をコピー</button>
+      <a class="report-link" href="https://powermarketinsight.net/jepx-spot/weekly/2026/2026-10-25_2026-10-31.html" target="_blank" rel="noopener">レポートを開く →</a>
+    </div>
+  </section>
+  
+  
+
+  <div class="note">
+    ・「𝕏 この内容で投稿」はXの公式シェア機能（Web Intent）を使います。ログイン中のアカウントで投稿画面が開きます。<br>
+    ・本文はそのまま投稿でき、レポートのURLも自動で入ります。文面を手直ししてから投稿してもOKです。<br>
+    ・このページは検索エンジンには表示されません（noindex）。
+  </div>
+
+  <div class="foot">Generated by jepx_weekly v0.1.0</div>
+</div>
+
+<script>
+  document.querySelectorAll('.btn-copy').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var el = document.getElementById(btn.dataset.target);
+      if (!el) return;
+      var text = el.textContent;
+      navigator.clipboard.writeText(text).then(function () {
+        var orig = btn.textContent;
+        btn.textContent = 'コピーしました';
+        btn.classList.add('copied');
+        setTimeout(function () { btn.textContent = orig; btn.classList.remove('copied'); }, 1600);
+      });
+    });
+  });
+</script>
+</body>
+</html>
