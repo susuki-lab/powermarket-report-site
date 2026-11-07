@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>エリアプライスとは｜連系線制約とエリア間値差の仕組み｜電力市場インサイト</title>
+<meta name="description" content="エリアプライス（9エリアの地域別価格）とは何かを解説。連系線の送電容量制約、エリア間値差（スプレッド）が生まれる理由、市場分断の仕組みを、システムプライスとの違いを交えてわかりやすく整理します。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://powermarketinsight.net/jepx-spot/guide/area-price.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="電力市場インサイト">
+<meta property="og:title" content="エリアプライスとは｜連系線制約とエリア間値差の仕組み｜電力市場インサイト">
+<meta property="og:description" content="エリアプライス（9エリアの地域別価格）とは何かを解説。連系線の送電容量制約、エリア間値差（スプレッド）が生まれる理由、市場分断の仕組みを、システムプライスとの違いを交えてわかりやすく整理します。">
+<meta property="og:url" content="https://powermarketinsight.net/jepx-spot/guide/area-price.html">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "エリアプライスとは｜連系線制約とエリア間値差の仕組み",
+      "description": "エリアプライス（9エリアの地域別価格）とは何かを解説。連系線の送電容量制約、エリア間値差（スプレッド）が生まれる理由、市場分断の仕組みを、システムプライスとの違いを交えてわかりやすく整理します。",
+      "url": "https://powermarketinsight.net/jepx-spot/guide/area-price.html",
+      "inLanguage": "ja",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://powermarketinsight.net/jepx-spot/guide/area-price.html"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "電力市場インサイト"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "電力市場インサイト",
+        "url": "https://powermarketinsight.net/"
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "エリアプライス",
+        "description": "エリアプライス（9エリアの地域別価格）とは何かを解説。連系線の送電容量制約、エリア間値差（スプレッド）が生まれる理由、市場分断の仕組みを、システムプライスとの違いを交えてわかりやすく整理します。",
+        "inDefinedTermSet": "https://powermarketinsight.net/jepx-spot/guide/index.html"
+      },
+      "dateModified": "2026-10-10",
+      "datePublished": "2026-10-10"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "どのエリアのエリアプライスを見ればいい？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "自社の需要（契約している供給区域）があるエリアのエリアプライスが、実際の調達価格に直結します。複数エリアに需要がある場合はそれぞれを確認します。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "エリア間値差はなぜ注目されるの？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "スプレッドが大きいエリアは需給が逼迫している、または連系線が混雑しているサインで、価格リスクやエリア特有の事情を読み取る手がかりになるためです。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--brand:#0B4F8A;--brand-2:#1E88E5;--accent:#E8622C;--up:#C62828;--down:#1565C0;--ink:#1A2733;--ink-soft:#5B6B78;--line:#E3E9EF;--bg:#F4F7FA;--card:#FFFFFF;--shadow:0 1px 3px rgba(16,42,67,.08),0 4px 16px rgba(16,42,67,.06);}
+  *{box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic","Meiryo",sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.8;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:860px;margin:0 auto;padding:32px 24px 64px;}
+  .article-head{background:linear-gradient(120deg,var(--brand) 0%,var(--brand-2) 100%);color:#fff;border-radius:16px;padding:30px 32px;box-shadow:var(--shadow);}
+  .article-head .eyebrow{font-size:12px;letter-spacing:.14em;opacity:.9;font-weight:500;}
+  .article-head .eyebrow a{color:#fff;text-decoration:none;opacity:.9;}
+  .article-head .eyebrow a:hover{opacity:1;text-decoration:underline;}
+  .article-head h1{font-size:26px;font-weight:700;margin:12px 0 6px;letter-spacing:.01em;line-height:1.4;}
+  .article-head .updated{font-size:12px;opacity:.85;}
+  .lead{font-size:15.5px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:18px 22px;margin:24px 0 8px;box-shadow:var(--shadow);}
+  section{margin-top:30px;}
+  h2{font-size:19px;font-weight:700;color:var(--brand);margin:0 0 12px;padding-left:12px;border-left:4px solid var(--accent);}
+  section p{font-size:14.5px;margin:10px 0;}
+  ul.points{margin:12px 0;padding:0;list-style:none;}
+  ul.points li{position:relative;padding:8px 14px 8px 34px;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin:8px 0;box-shadow:var(--shadow);}
+  ul.points li::before{content:"";position:absolute;left:14px;top:16px;width:8px;height:8px;border-radius:2px;background:var(--brand-2);}
+  .faq{margin-top:14px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 18px;margin:10px 0;box-shadow:var(--shadow);}
+  .faq summary{font-size:14.5px;font-weight:700;color:var(--ink);cursor:pointer;padding:12px 0;list-style:none;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::before{content:"Q ";color:var(--accent);font-weight:700;}
+  .faq details[open] summary{border-bottom:1px dashed var(--line);}
+  .faq .answer{font-size:14px;color:var(--ink-soft);padding:12px 0;}
+  .faq .answer::before{content:"A ";color:var(--brand-2);font-weight:700;}
+  .related{margin-top:34px;}
+  .related h2{margin-bottom:14px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  a.related-card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);transition:transform .12s,box-shadow .12s;}
+  a.related-card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(16,42,67,.14);border-color:#C9D8E8;}
+  a.related-card .r-label{font-size:11px;color:var(--ink-soft);}
+  a.related-card .r-title{font-size:15px;font-weight:700;color:var(--brand);margin-top:4px;}
+  .prevnext{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:30px 0 0;font-size:13px;}
+  .prevnext a{text-decoration:none;color:var(--brand);font-weight:700;}
+  .prevnext span.disabled{color:#B5C0CB;font-weight:700;}
+  .backlinks{margin-top:26px;font-size:13px;}
+  .backlinks a{color:var(--brand-2);text-decoration:none;font-weight:700;}
+  .backlinks a:hover{text-decoration:underline;}
+  .foot{margin-top:40px;font-size:11.5px;color:var(--ink-soft);text-align:center;}
+  @media(max-width:720px){.related-list{grid-template-columns:1fr;}.article-head h1{font-size:21px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="article-head">
+    <div class="eyebrow"><a href="index.html">← 用語解説ガイド一覧へ</a></div>
+    <div class="eyebrow" style="margin-top:4px;">JEPX SPOT MARKET GUIDE</div>
+    <h1>エリアプライスとは｜連系線制約とエリア間値差の仕組み</h1>
+    <div class="updated">最終更新: 2026-10-10</div>
+  </header>
+
+  <p class="lead">エリアプライスは、連系線（エリアをまたぐ送電線）の容量制約を考慮して、全国9エリアごとに計算される価格です。連系線が混雑すると、エリアによって価格が分かれ、エリア間に値差（スプレッド）が生じます。</p>
+
+  
+  <section>
+    <h2>9つのエリア</h2>
+    <p>日本の電力系統は、旧一般電気事業者の供給区域を単位とした9つのエリアに分かれています（JEPXスポット市場の対象。沖縄は対象外）。</p>
+    
+    <ul class="points">
+      <li>北海道 / 東北 / 東京 / 中部 / 北陸 / 関西 / 中国 / 四国 / 九州</li>
+    </ul>
+    
+  </section>
+  
+  <section>
+    <h2>連系線制約とは</h2>
+    <p>エリア同士は連系線で結ばれていますが、送電できる容量には上限があります。安い電気が豊富なエリアから、電気が不足して価格が高いエリアへ送ろうとしても、連系線の容量を超えて送ることはできません。これが連系線制約です。</p><p>連系線が容量いっぱいまで使われて、それ以上安い電気を送れなくなる状態を「市場分断」と呼びます。市場分断が起きると、安い電気を送り出せる側と、受け取れない側で価格が分かれます。</p>
+    
+  </section>
+  
+  <section>
+    <h2>エリア間値差（スプレッド）が生まれる理由</h2>
+    <p>市場分断が起きると、電気を送り出す側のエリアは需要に対して供給が余るため価格が下がり、受け取る側のエリアは供給が足りず価格が上がります。この価格差がエリア間値差（スプレッド）です。</p><p>たとえば太陽光が豊富な九州エリアで昼間に電気が余り、連系線がいっぱいで本州へ送りきれないと、九州のエリアプライスだけが大きく下がる、といった形でスプレッドが現れます。</p>
+    
+    <ul class="points">
+      <li>送り出す側（供給過多）のエリア → 価格が下がる</li><li>受け取る側（供給不足）のエリア → 価格が上がる</li><li>両者の差 = エリア間値差（スプレッド）</li>
+    </ul>
+    
+  </section>
+  
+  <section>
+    <h2>システムプライスとの違い</h2>
+    <p>システムプライスは連系線制約を考えない全国統一価格、エリアプライスは連系線制約を加味したエリア別価格です。連系線に余裕があるコマでは両者は一致し、混雑するコマではエリアプライスがエリアごとに分かれます。</p>
+    
+  </section>
+  
+
+  
+  <section class="faq">
+    <h2>よくある質問</h2>
+    
+    <details>
+      <summary>どのエリアのエリアプライスを見ればいい？</summary>
+      <div class="answer">自社の需要（契約している供給区域）があるエリアのエリアプライスが、実際の調達価格に直結します。複数エリアに需要がある場合はそれぞれを確認します。</div>
+    </details>
+    
+    <details>
+      <summary>エリア間値差はなぜ注目されるの？</summary>
+      <div class="answer">スプレッドが大きいエリアは需給が逼迫している、または連系線が混雑しているサインで、価格リスクやエリア特有の事情を読み取る手がかりになるためです。</div>
+    </details>
+    
+  </section>
+  
+
+  
+  <section class="related">
+    <h2>関連する用語解説</h2>
+    <div class="related-list">
+      
+      <a class="related-card" href="system-price.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">システムプライスとは</div>
+      </a>
+      
+      <a class="related-card" href="jepx-spot-market.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">JEPXスポット市場とは</div>
+      </a>
+      
+      <a class="related-card" href="how-to-read.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">スポット価格レポートの読み方</div>
+      </a>
+      
+    </div>
+  </section>
+  
+
+  <nav class="prevnext">
+    <a href="system-price.html">← システムプライスとは</a>
+    <a href="contract-volume.html">約定量・約定総量とは →</a>
+  </nav>
+
+  <div class="backlinks">
+    <a href="index.html">用語解説ガイド一覧</a>　|　<a href="../index.html">JEPXスポット市場トップ</a>
+  </div>
+
+  <div class="foot">Generated by jepx_weekly v0.1.0　|　データ出典: JEPX、気象庁、HJKS</div>
+</div>
+</body>
+</html>
