@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JEPXスポット価格の推移の見方｜値動きと季節性の読み方｜電力市場インサイト</title>
+<meta name="description" content="JEPXスポット価格の推移（値動き）の見方を解説。前日比・前週比の読み方、季節による価格の傾向、昼間と夕方で価格が変わる理由、推移を追うときに注目すべきポイントを、電力市場の初心者にもわかりやすくまとめます。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://powermarketinsight.net/jepx-spot/guide/price-trend.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="電力市場インサイト">
+<meta property="og:title" content="JEPXスポット価格の推移の見方｜値動きと季節性の読み方｜電力市場インサイト">
+<meta property="og:description" content="JEPXスポット価格の推移（値動き）の見方を解説。前日比・前週比の読み方、季節による価格の傾向、昼間と夕方で価格が変わる理由、推移を追うときに注目すべきポイントを、電力市場の初心者にもわかりやすくまとめます。">
+<meta property="og:url" content="https://powermarketinsight.net/jepx-spot/guide/price-trend.html">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "JEPXスポット価格の推移の見方｜値動きと季節性の読み方",
+      "description": "JEPXスポット価格の推移（値動き）の見方を解説。前日比・前週比の読み方、季節による価格の傾向、昼間と夕方で価格が変わる理由、推移を追うときに注目すべきポイントを、電力市場の初心者にもわかりやすくまとめます。",
+      "url": "https://powermarketinsight.net/jepx-spot/guide/price-trend.html",
+      "inLanguage": "ja",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://powermarketinsight.net/jepx-spot/guide/price-trend.html"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "電力市場インサイト"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "電力市場インサイト",
+        "url": "https://powermarketinsight.net/"
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "JEPX価格の推移",
+        "description": "JEPXスポット価格の推移（値動き）の見方を解説。前日比・前週比の読み方、季節による価格の傾向、昼間と夕方で価格が変わる理由、推移を追うときに注目すべきポイントを、電力市場の初心者にもわかりやすくまとめます。",
+        "inDefinedTermSet": "https://powermarketinsight.net/jepx-spot/guide/index.html"
+      },
+      "dateModified": "2026-10-18",
+      "datePublished": "2026-10-18"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "価格推移はどこで確認できる？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "本サイトの日次レポートで30分コマ単位の価格カーブ、週次レポートで1週間の値動きと前週比を確認できます。グラフで推移を視覚的に追えます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "なぜ昼間のほうが安いことが多いの？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "太陽光発電の出力が大きい昼間は供給が増えるため、価格が下がりやすくなります。太陽光が減る夕方は、需要が残る一方で供給が細るため価格が上がりやすくなります。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--brand:#0B4F8A;--brand-2:#1E88E5;--accent:#E8622C;--up:#C62828;--down:#1565C0;--ink:#1A2733;--ink-soft:#5B6B78;--line:#E3E9EF;--bg:#F4F7FA;--card:#FFFFFF;--shadow:0 1px 3px rgba(16,42,67,.08),0 4px 16px rgba(16,42,67,.06);}
+  *{box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic","Meiryo",sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.8;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:860px;margin:0 auto;padding:32px 24px 64px;}
+  .article-head{background:linear-gradient(120deg,var(--brand) 0%,var(--brand-2) 100%);color:#fff;border-radius:16px;padding:30px 32px;box-shadow:var(--shadow);}
+  .article-head .eyebrow{font-size:12px;letter-spacing:.14em;opacity:.9;font-weight:500;}
+  .article-head .eyebrow a{color:#fff;text-decoration:none;opacity:.9;}
+  .article-head .eyebrow a:hover{opacity:1;text-decoration:underline;}
+  .article-head h1{font-size:26px;font-weight:700;margin:12px 0 6px;letter-spacing:.01em;line-height:1.4;}
+  .article-head .updated{font-size:12px;opacity:.85;}
+  .lead{font-size:15.5px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:18px 22px;margin:24px 0 8px;box-shadow:var(--shadow);}
+  section{margin-top:30px;}
+  h2{font-size:19px;font-weight:700;color:var(--brand);margin:0 0 12px;padding-left:12px;border-left:4px solid var(--accent);}
+  section p{font-size:14.5px;margin:10px 0;}
+  ul.points{margin:12px 0;padding:0;list-style:none;}
+  ul.points li{position:relative;padding:8px 14px 8px 34px;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin:8px 0;box-shadow:var(--shadow);}
+  ul.points li::before{content:"";position:absolute;left:14px;top:16px;width:8px;height:8px;border-radius:2px;background:var(--brand-2);}
+  .faq{margin-top:14px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 18px;margin:10px 0;box-shadow:var(--shadow);}
+  .faq summary{font-size:14.5px;font-weight:700;color:var(--ink);cursor:pointer;padding:12px 0;list-style:none;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::before{content:"Q ";color:var(--accent);font-weight:700;}
+  .faq details[open] summary{border-bottom:1px dashed var(--line);}
+  .faq .answer{font-size:14px;color:var(--ink-soft);padding:12px 0;}
+  .faq .answer::before{content:"A ";color:var(--brand-2);font-weight:700;}
+  .related{margin-top:34px;}
+  .related h2{margin-bottom:14px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  a.related-card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);transition:transform .12s,box-shadow .12s;}
+  a.related-card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(16,42,67,.14);border-color:#C9D8E8;}
+  a.related-card .r-label{font-size:11px;color:var(--ink-soft);}
+  a.related-card .r-title{font-size:15px;font-weight:700;color:var(--brand);margin-top:4px;}
+  .prevnext{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:30px 0 0;font-size:13px;}
+  .prevnext a{text-decoration:none;color:var(--brand);font-weight:700;}
+  .prevnext span.disabled{color:#B5C0CB;font-weight:700;}
+  .backlinks{margin-top:26px;font-size:13px;}
+  .backlinks a{color:var(--brand-2);text-decoration:none;font-weight:700;}
+  .backlinks a:hover{text-decoration:underline;}
+  .foot{margin-top:40px;font-size:11.5px;color:var(--ink-soft);text-align:center;}
+  @media(max-width:720px){.related-list{grid-template-columns:1fr;}.article-head h1{font-size:21px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="article-head">
+    <div class="eyebrow"><a href="index.html">← 用語解説ガイド一覧へ</a></div>
+    <div class="eyebrow" style="margin-top:4px;">JEPX SPOT MARKET GUIDE</div>
+    <h1>JEPXスポット価格の推移の見方｜値動きと季節性の読み方</h1>
+    <div class="updated">最終更新: 2026-10-18</div>
+  </header>
+
+  <p class="lead">JEPXスポット価格は、日々・時間帯・季節によって大きく動きます。ここでは価格推移の基本的な見方と、値動きの背景にある要因の読み取り方を解説します。</p>
+
+  
+  <section>
+    <h2>前日比・前週比で動きをつかむ</h2>
+    <p>価格推移を見るときの基本は、前の期間と比べることです。本サイトのレポートでは、平均価格の前日比・前週比を増減（▲▼）で示しています。まず「上がったのか下がったのか」「どのくらいの幅か」を押さえます。</p><p>大きく動いた日は、気温の変化や発電設備の停止など、背景となる要因がある場合が多いです。数値だけでなく理由もあわせて見ると理解が深まります。</p>
+    
+  </section>
+  
+  <section>
+    <h2>1日の中の時間帯による推移</h2>
+    <p>価格は1日の中でも大きく動きます。太陽光発電が豊富な昼間は価格が下がりやすく、日が沈んで太陽光が減り需要が残る夕方（点灯帯）は価格が上がりやすい、という形が典型です。この昼安・夕高のパターンは近年とくに顕著です。</p>
+    
+    <ul class="points">
+      <li>昼間（太陽光が多い）: 価格が下がりやすい</li><li>夕方（点灯帯・太陽光減）: 価格が上がりやすい</li><li>深夜: 需要が少なく比較的安定</li>
+    </ul>
+    
+  </section>
+  
+  <section>
+    <h2>季節による傾向</h2>
+    <p>価格は季節でも傾向が変わります。冷房需要が増える夏、暖房需要が増える冬は需要が高まり価格が上がりやすく、需要が穏やかで再エネも出やすい春・秋は比較的安くなりやすい傾向があります。</p><p>ただし燃料価格や発電設備の状況によって年ごとに差が出るため、季節の傾向はあくまで目安として、実際の推移とあわせて確認するのが大切です。</p>
+    
+  </section>
+  
+  <section>
+    <h2>推移を追うときの注目点</h2>
+    <p>単に平均価格を追うだけでなく、最高値・最安値や、エリア間の価格差（スプレッド）の推移も見ると、市場の状態がより立体的に見えてきます。</p>
+    
+  </section>
+  
+
+  
+  <section class="faq">
+    <h2>よくある質問</h2>
+    
+    <details>
+      <summary>価格推移はどこで確認できる？</summary>
+      <div class="answer">本サイトの日次レポートで30分コマ単位の価格カーブ、週次レポートで1週間の値動きと前週比を確認できます。グラフで推移を視覚的に追えます。</div>
+    </details>
+    
+    <details>
+      <summary>なぜ昼間のほうが安いことが多いの？</summary>
+      <div class="answer">太陽光発電の出力が大きい昼間は供給が増えるため、価格が下がりやすくなります。太陽光が減る夕方は、需要が残る一方で供給が細るため価格が上がりやすくなります。</div>
+    </details>
+    
+  </section>
+  
+
+  
+  <section class="related">
+    <h2>関連する用語解説</h2>
+    <div class="related-list">
+      
+      <a class="related-card" href="market-price.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">JEPX市場価格とは</div>
+      </a>
+      
+      <a class="related-card" href="how-to-read.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">スポット価格レポートの読み方</div>
+      </a>
+      
+      <a class="related-card" href="price-spike.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">価格スパイク（スパイク市場）とは</div>
+      </a>
+      
+    </div>
+  </section>
+  
+
+  <nav class="prevnext">
+    <a href="contract-volume.html">← 約定量・約定総量とは</a>
+    <a href="price-spike.html">価格スパイク（スパイク市場）とは →</a>
+  </nav>
+
+  <div class="backlinks">
+    <a href="index.html">用語解説ガイド一覧</a>　|　<a href="../index.html">JEPXスポット市場トップ</a>
+  </div>
+
+  <div class="foot">Generated by jepx_weekly v0.1.0　|　データ出典: JEPX、気象庁、HJKS</div>
+</div>
+</body>
+</html>

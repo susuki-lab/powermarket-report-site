@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>価格スパイク（スパイク市場）とは｜電力価格が急騰する仕組み｜電力市場インサイト</title>
+<meta name="description" content="電力の価格スパイク（スパイク市場）とは何かを解説。JEPXスポット価格が短時間で急騰する現象の仕組み、需給逼迫や連系線制約などの原因、価格上限、そして価格スパイクが市場に与える影響をわかりやすく整理します。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://powermarketinsight.net/jepx-spot/guide/price-spike.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="電力市場インサイト">
+<meta property="og:title" content="価格スパイク（スパイク市場）とは｜電力価格が急騰する仕組み｜電力市場インサイト">
+<meta property="og:description" content="電力の価格スパイク（スパイク市場）とは何かを解説。JEPXスポット価格が短時間で急騰する現象の仕組み、需給逼迫や連系線制約などの原因、価格上限、そして価格スパイクが市場に与える影響をわかりやすく整理します。">
+<meta property="og:url" content="https://powermarketinsight.net/jepx-spot/guide/price-spike.html">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "価格スパイク（スパイク市場）とは｜電力価格が急騰する仕組み",
+      "description": "電力の価格スパイク（スパイク市場）とは何かを解説。JEPXスポット価格が短時間で急騰する現象の仕組み、需給逼迫や連系線制約などの原因、価格上限、そして価格スパイクが市場に与える影響をわかりやすく整理します。",
+      "url": "https://powermarketinsight.net/jepx-spot/guide/price-spike.html",
+      "inLanguage": "ja",
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://powermarketinsight.net/jepx-spot/guide/price-spike.html"
+      },
+      "author": {
+        "@type": "Organization",
+        "name": "電力市場インサイト"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "電力市場インサイト",
+        "url": "https://powermarketinsight.net/"
+      },
+      "about": {
+        "@type": "DefinedTerm",
+        "name": "価格スパイク",
+        "description": "電力の価格スパイク（スパイク市場）とは何かを解説。JEPXスポット価格が短時間で急騰する現象の仕組み、需給逼迫や連系線制約などの原因、価格上限、そして価格スパイクが市場に与える影響をわかりやすく整理します。",
+        "inDefinedTermSet": "https://powermarketinsight.net/jepx-spot/guide/index.html"
+      },
+      "dateModified": "2026-10-18",
+      "datePublished": "2026-10-18"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "価格スパイクはどのくらいの頻度で起こる？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "常時起こるものではなく、猛暑・厳寒や設備トラブルなど需給が逼迫した特定の局面で発生します。季節や年によって頻度は大きく変わります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "スパイクはどの時間帯に起きやすい？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "需要が高く供給が細る夕方の点灯帯（太陽光が減り需要が残る時間帯）に起きやすい傾向があります。猛暑時は日中の冷房需要でも発生します。"
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{--brand:#0B4F8A;--brand-2:#1E88E5;--accent:#E8622C;--up:#C62828;--down:#1565C0;--ink:#1A2733;--ink-soft:#5B6B78;--line:#E3E9EF;--bg:#F4F7FA;--card:#FFFFFF;--shadow:0 1px 3px rgba(16,42,67,.08),0 4px 16px rgba(16,42,67,.06);}
+  *{box-sizing:border-box;}
+  body{font-family:"Noto Sans JP","Yu Gothic","Meiryo",sans-serif;color:var(--ink);background:var(--bg);margin:0;line-height:1.8;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:860px;margin:0 auto;padding:32px 24px 64px;}
+  .article-head{background:linear-gradient(120deg,var(--brand) 0%,var(--brand-2) 100%);color:#fff;border-radius:16px;padding:30px 32px;box-shadow:var(--shadow);}
+  .article-head .eyebrow{font-size:12px;letter-spacing:.14em;opacity:.9;font-weight:500;}
+  .article-head .eyebrow a{color:#fff;text-decoration:none;opacity:.9;}
+  .article-head .eyebrow a:hover{opacity:1;text-decoration:underline;}
+  .article-head h1{font-size:26px;font-weight:700;margin:12px 0 6px;letter-spacing:.01em;line-height:1.4;}
+  .article-head .updated{font-size:12px;opacity:.85;}
+  .lead{font-size:15.5px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:18px 22px;margin:24px 0 8px;box-shadow:var(--shadow);}
+  section{margin-top:30px;}
+  h2{font-size:19px;font-weight:700;color:var(--brand);margin:0 0 12px;padding-left:12px;border-left:4px solid var(--accent);}
+  section p{font-size:14.5px;margin:10px 0;}
+  ul.points{margin:12px 0;padding:0;list-style:none;}
+  ul.points li{position:relative;padding:8px 14px 8px 34px;font-size:14px;background:var(--card);border:1px solid var(--line);border-radius:10px;margin:8px 0;box-shadow:var(--shadow);}
+  ul.points li::before{content:"";position:absolute;left:14px;top:16px;width:8px;height:8px;border-radius:2px;background:var(--brand-2);}
+  .faq{margin-top:14px;}
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:4px 18px;margin:10px 0;box-shadow:var(--shadow);}
+  .faq summary{font-size:14.5px;font-weight:700;color:var(--ink);cursor:pointer;padding:12px 0;list-style:none;}
+  .faq summary::-webkit-details-marker{display:none;}
+  .faq summary::before{content:"Q ";color:var(--accent);font-weight:700;}
+  .faq details[open] summary{border-bottom:1px dashed var(--line);}
+  .faq .answer{font-size:14px;color:var(--ink-soft);padding:12px 0;}
+  .faq .answer::before{content:"A ";color:var(--brand-2);font-weight:700;}
+  .related{margin-top:34px;}
+  .related h2{margin-bottom:14px;}
+  .related-list{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  a.related-card{display:block;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow);transition:transform .12s,box-shadow .12s;}
+  a.related-card:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(16,42,67,.14);border-color:#C9D8E8;}
+  a.related-card .r-label{font-size:11px;color:var(--ink-soft);}
+  a.related-card .r-title{font-size:15px;font-weight:700;color:var(--brand);margin-top:4px;}
+  .prevnext{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:30px 0 0;font-size:13px;}
+  .prevnext a{text-decoration:none;color:var(--brand);font-weight:700;}
+  .prevnext span.disabled{color:#B5C0CB;font-weight:700;}
+  .backlinks{margin-top:26px;font-size:13px;}
+  .backlinks a{color:var(--brand-2);text-decoration:none;font-weight:700;}
+  .backlinks a:hover{text-decoration:underline;}
+  .foot{margin-top:40px;font-size:11.5px;color:var(--ink-soft);text-align:center;}
+  @media(max-width:720px){.related-list{grid-template-columns:1fr;}.article-head h1{font-size:21px;}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="article-head">
+    <div class="eyebrow"><a href="index.html">← 用語解説ガイド一覧へ</a></div>
+    <div class="eyebrow" style="margin-top:4px;">JEPX SPOT MARKET GUIDE</div>
+    <h1>価格スパイク（スパイク市場）とは｜電力価格が急騰する仕組み</h1>
+    <div class="updated">最終更新: 2026-10-18</div>
+  </header>
+
+  <p class="lead">価格スパイクとは、電力の市場価格が短時間で急激に跳ね上がる現象のことです。需要と供給のバランスが大きく崩れたときに起こり、ときに通常の数倍から十数倍の価格に達することもあります。</p>
+
+  
+  <section>
+    <h2>価格スパイクとは</h2>
+    <p>価格スパイク（スパイク）は、特定のコマ（30分）で市場価格が急騰する現象を指します。「スパイク市場」という言い方も、価格が突出して高騰した市場・局面を指して使われます。</p><p>電気は大量に貯めておくことが難しく、需要と供給を常に一致させる必要があります。供給に余裕がなくなると、わずかな需要増でも価格が跳ね上がります。これがスパイクです。</p>
+    
+  </section>
+  
+  <section>
+    <h2>価格スパイクが起こる主な原因</h2>
+    <p>価格スパイクは、供給力が需要に対して不足しそうになったときに発生します。主な原因は次のとおりです。</p>
+    
+    <ul class="points">
+      <li>猛暑・厳寒による需要の急増（冷暖房需要）</li><li>発電設備の計画外停止・トラブルによる供給力の低下</li><li>太陽光・風力の出力低下（曇天・無風・日没後）</li><li>連系線の制約で、安い電気を他エリアから送れない</li><li>燃料制約（LNG在庫のひっ迫など）</li>
+    </ul>
+    
+  </section>
+  
+  <section>
+    <h2>価格の上限</h2>
+    <p>JEPXのスポット市場には、価格が無制限に上がらないよう上限（価格キャップ）が設けられています。需給が極端に逼迫すると、価格がこの上限付近まで張り付くことがあります。</p><p>過去には、寒波による需要急増と燃料制約が重なって、広範囲で価格が高止まりした事例もありました。</p>
+    
+  </section>
+  
+  <section>
+    <h2>価格スパイクの影響</h2>
+    <p>価格スパイクは、市場から電力を調達する小売電気事業者（新電力）にとって調達コストの急増を意味します。市場連動型の料金プランでは、スパイク時の高い価格が利用者の電気料金に反映されることもあります。</p><p>そのため、価格スパイクのリスクを把握し、推移をウォッチすることは電力の調達・リスク管理のうえで重要です。</p>
+    
+  </section>
+  
+
+  
+  <section class="faq">
+    <h2>よくある質問</h2>
+    
+    <details>
+      <summary>価格スパイクはどのくらいの頻度で起こる？</summary>
+      <div class="answer">常時起こるものではなく、猛暑・厳寒や設備トラブルなど需給が逼迫した特定の局面で発生します。季節や年によって頻度は大きく変わります。</div>
+    </details>
+    
+    <details>
+      <summary>スパイクはどの時間帯に起きやすい？</summary>
+      <div class="answer">需要が高く供給が細る夕方の点灯帯（太陽光が減り需要が残る時間帯）に起きやすい傾向があります。猛暑時は日中の冷房需要でも発生します。</div>
+    </details>
+    
+  </section>
+  
+
+  
+  <section class="related">
+    <h2>関連する用語解説</h2>
+    <div class="related-list">
+      
+      <a class="related-card" href="price-trend.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">JEPX価格の推移の見方</div>
+      </a>
+      
+      <a class="related-card" href="contract-volume.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">約定量・約定総量とは</div>
+      </a>
+      
+      <a class="related-card" href="how-to-read.html">
+        <div class="r-label">用語解説</div>
+        <div class="r-title">スポット価格レポートの読み方</div>
+      </a>
+      
+    </div>
+  </section>
+  
+
+  <nav class="prevnext">
+    <a href="price-trend.html">← JEPX価格の推移の見方</a>
+    <a href="how-to-read.html">スポット価格レポートの読み方 →</a>
+  </nav>
+
+  <div class="backlinks">
+    <a href="index.html">用語解説ガイド一覧</a>　|　<a href="../index.html">JEPXスポット市場トップ</a>
+  </div>
+
+  <div class="foot">Generated by jepx_weekly v0.1.0　|　データ出典: JEPX、気象庁、HJKS</div>
+</div>
+</body>
+</html>
